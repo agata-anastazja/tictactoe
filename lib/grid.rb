@@ -1,3 +1,4 @@
+#stores all moves and winning combination
 class Grid
   attr_reader :display
 

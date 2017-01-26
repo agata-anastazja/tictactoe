@@ -1,3 +1,5 @@
+#stores player's moves
+
 class Player
 attr_reader :moves
   def initialize
