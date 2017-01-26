@@ -9,4 +9,5 @@ attr_reader :moves
   def make_a_move(field)
     @moves.push(field)
   end
+
 end

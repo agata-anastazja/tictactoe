@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:player) {double :player}
-  let(:grid) {double :grid}
+  let(:grid) {double :grid, display: [[0, 0, 0], [0, 0, 0], [0, 0, 0]]}
   before(:each) { allow(grid).to receive(:new)}
   before(:each) { allow(player).to receive(:new)}
   subject(:game) {described_class.new(grid, player)}
@@ -19,15 +19,16 @@ describe Game do
   it "starts with player1 turn" do
     expect(game.current_player).to eq(game.player1)
   end
-  # context "you can select a field" do
-  #   it "selects an empty field" do
-  #     game.select_field(1, 1)
-  #     expect(game.grid.display).to eq [["X", nil, nil],
-  #                                 [nil, nil, nil],
-  #                                 [nil, nil, nil]]
-  #   end
-  #
-  #
-  #
-  # end
+  context "you can select a field" do
+    it "selects an empty field" do
+      require 'pry'; binding.pry
+      game.select_field(1, 1)
+      expect(grid.display).to eq  [["X", 0, 0],
+                                  [0, 0, 0],
+                                  [0, 0, 0]]
+    end
+
+
+
+  end
 end
